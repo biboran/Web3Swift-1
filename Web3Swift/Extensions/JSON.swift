@@ -5,9 +5,18 @@
 import Foundation
 import SwiftyJSON
 
-fileprivate class InvalidTypeError: Swift.Error {
+fileprivate class InvalidTypeError<T>: DescribedError {
 
+    private let json: JSON
+    private let typeName: String
+    init(json: JSON, expectedType: T.Type) {
+        self.json = json
+        self.typeName = String(describing: expectedType)
+    }
 
+    var description: String {
+        return "Expected type was \(typeName) but it was actually \(String(describing: json.type))"
+    }
 
 }
 
@@ -21,7 +30,7 @@ extension JSON {
         if let int = self.int {
             return int
         } else {
-            throw InvalidTypeError()
+            throw InvalidTypeError(json: self, expectedType: Int.self)
         }
     }
 
@@ -29,7 +38,7 @@ extension JSON {
         if let string = self.string {
             return string
         } else {
-            throw InvalidTypeError()
+            throw InvalidTypeError(json: self, expectedType: String.self)
         }
     }
 
