@@ -24,12 +24,12 @@ public final class TransactionHashParameter: GethParameter {
     }
 
     public func value() throws -> Any {
-        guard transactionHash.toString().count == 64 else {
+        guard transactionHash.toUnprefixedString().count == 64 else {
             throw IncorrectTxHashLengthError(
-                length: transactionHash.toString().count
+                length: transactionHash.toUnprefixedString().count
             )
         }
-        return transactionHash.toPrefixString()
+        return transactionHash.toPrefixedString()
     }
     
 }

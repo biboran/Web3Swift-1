@@ -35,7 +35,7 @@ public final class SimpleAddress: Address {
         - hex: A valid hex string wrapped in `Hex` object.
      */
     init(hex: Hex) throws {
-        guard hex.toString().count == 40 else { throw IncorrectAddressLengthError(length: hex.toString().count) }
+        guard hex.toUnprefixedString().count == 40 else { throw IncorrectAddressLengthError(length: hex.toUnprefixedString().count) }
         self.hex = hex
     }
 
@@ -46,7 +46,7 @@ public final class SimpleAddress: Address {
     An prefixed hex string of length 42
      */
     public func toString() -> String {
-        return hex.toPrefixString()
+        return hex.toPrefixedString()
     }
 
     public func toData() -> Data {

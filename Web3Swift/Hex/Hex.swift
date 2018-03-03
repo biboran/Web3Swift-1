@@ -12,16 +12,28 @@ import Foundation
 
 /// Protocol for wrapping hex strings
 public protocol Hex {
-    
-    func toString() -> String
-    
-    func toPrefixString() -> String
+
+    /**
+    Converts `Hex` to `String`
+
+    - returns:
+    A non prefixed hex string
+    */
+    func toUnprefixedString() -> String
+
+    /**
+    Converts `Hex` to `String`
+
+    - returns:
+    A prefixed hex string
+    */
+    func toPrefixedString() -> String
 
     /**
     Bytes of the Hex
 
     - returns:
-    Data which represents bytes of the Hex
+    `Data` which represents bytes of the `Hex`
     */
     func toBytes() -> Data
     

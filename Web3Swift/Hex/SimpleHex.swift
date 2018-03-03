@@ -28,11 +28,11 @@ public final class IncorrectHexCharacterError: DescribedError {
 
 /// An implementation of hex string wrapper
 public final class SimpleHex: Hex {
-    
-    private let hex: String
+
     private let bytes: Data
+
     /**
-    ctor
+    ctor that expects a `value` that is a valid (prefixed or unprefixed) hex string
 
     - throws:
     Throws `DescribedError` if something goes wrong
@@ -51,26 +51,9 @@ public final class SimpleHex: Hex {
             ) != nil else {
             throw IncorrectHexCharacterError(hex: hexString)
         }
-        
-        hex = hexString
+
         bytes = try Data(hexValue: hexString)
     }
-
-    /**
-    ctor that resolves a length ambiguity by adding a leading zero
-
-    - throws:
-    `DescribedError` if something goes wrong
-    */
-    convenience init(bigEndianCompactValue: String) throws {
-        if bigEndianCompactValue.count.isEven() {
-            try self.init(value: bigEndianCompactValue)
-        } else {
-            let hexValue = bigEndianCompactValue.removingHexPrefix()
-            try self.init(value: "0"+hexValue)
-        }
-    }
-
     
     /**
     Converts object to string
@@ -78,8 +61,8 @@ public final class SimpleHex: Hex {
     - returns:
     A non prefixed hex string
     */
-    public func toString() -> String {
-        return hex
+    public func toUnprefixedString() -> String {
+        return bytes.toHexString()
     }
     
     /**
@@ -88,8 +71,8 @@ public final class SimpleHex: Hex {
     - returns:
     A prefixed hex string
     */
-    public func toPrefixString() -> String {
-        return hex.addingHexPrefix()
+    public func toPrefixedString() -> String {
+        return "0x" + bytes.toHexString()
     }
 
     public func toBytes() -> Data {

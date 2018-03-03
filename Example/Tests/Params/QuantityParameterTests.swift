@@ -16,17 +16,26 @@ import XCTest
 class QuantityParameterTests: XCTestCase {
     
     /// Assert parameter returns correct hex string
-    func testQuantityParameterToString() {
-        
+    func testQuantityParameterToStringFor1() {
         expect{
             try QuantityParameter(
-                    quantity: 1
+                quantity: 1
             ).value() as! String // swiftlint:disable:this force_cast
         }.to(
             equal("0x1"),
             description: "Make sure that correct hex string is returned"
         )
-        
+    }
+
+    func testQuantityParameterToStringFor1023() {
+        expect{
+            try QuantityParameter(
+                quantity: 1023
+            ).value() as! String // swiftlint:disable:this force_cast
+        }.to(
+            equal("0x3ff"),
+            description: "Quantity parameter value constructed as integer is expected to match the compact hex representation of the integer"
+        )
     }
     
 }

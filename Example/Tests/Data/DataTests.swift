@@ -45,4 +45,13 @@ final class DataTests: XCTestCase {
         )
     }
 
+    func testStringConversionFor1023() {
+        expect{
+            try Data(hexValue: "0x03ff").toHexString()
+        }.to(
+            equal("03ff"),
+            description: "Data hex string is expected to be not ambiguous"
+        )
+    }
+
 }
