@@ -31,6 +31,10 @@ public final class SimpleHex: Hex {
 
     private let bytes: Data
 
+    init(bytes: Data) {
+        self.bytes = bytes
+    }
+
     /**
     ctor that expects a `value` that is a valid (prefixed or unprefixed) hex string
 

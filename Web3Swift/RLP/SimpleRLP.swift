@@ -13,7 +13,7 @@ public final class SimpleRLP: RLP {
         self.appendix = RLPBytesAppendix()
     }
 
-    init(rlps: [RLP]) throws {
+    init(rlps: [RLP]) {
         self.lazyBytes = { try rlps.map{ try $0.toData() }.reduce(Data()) { $0 + $1 } }
         self.appendix = RLPCollectionAppendix()
     }

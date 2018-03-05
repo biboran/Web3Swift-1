@@ -15,6 +15,7 @@
 		584FA9DBA01B7EAE9EC1021B /* EthTransactionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FAE325995A0ABA7A8A643 /* EthTransactionsTests.swift */; };
 		584FAA14203BE4FA51BD4A13 /* GetGasPriceProcedureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FACF870DFF799329F558F /* GetGasPriceProcedureTests.swift */; };
 		584FAB2142925189AE740EF2 /* EstimateGasProcedureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FAB8D61F22CFD4760EFE3 /* EstimateGasProcedureTests.swift */; };
+		584FAC5AED7C901CA6B5374D /* AccountTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FAEFE6935B4DC408DCFB4 /* AccountTests.swift */; };
 		584FAC872236D4D12AA6C0F6 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FA2C7D2205CF3D85F6DD7 /* DataTests.swift */; };
 		584FACC7E7D07041F9A19733 /* BigEndianHexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FA4039CA4FC4275E8457B /* BigEndianHexTests.swift */; };
 		584FACDDE9E98EDA9C414EF6 /* RandomNonceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584FAB47440D3CE3C6ED0684 /* RandomNonceTests.swift */; };
@@ -71,6 +72,7 @@
 		584FACC5A38F59EE5FCD2BC7 /* RLPTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLPTests.swift; sourceTree = "<group>"; };
 		584FACF870DFF799329F558F /* GetGasPriceProcedureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetGasPriceProcedureTests.swift; sourceTree = "<group>"; };
 		584FAE325995A0ABA7A8A643 /* EthTransactionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthTransactionsTests.swift; sourceTree = "<group>"; };
+		584FAEFE6935B4DC408DCFB4 /* AccountTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTests.swift; sourceTree = "<group>"; };
 		584FAFC4DFD37E513B7E286C /* GetTransactionsCountProcedureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTransactionsCountProcedureTests.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Web3Swift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Web3Swift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				584FA2CF095F632C24C63534 /* Wei */,
 				584FAC21097845C70E1F5061 /* Gas */,
 				584FA5170936BD947884AE75 /* Data */,
+				584FAEFE6935B4DC408DCFB4 /* AccountTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				584FAB2142925189AE740EF2 /* EstimateGasProcedureTests.swift in Sources */,
 				584FAC872236D4D12AA6C0F6 /* DataTests.swift in Sources */,
 				584FACC7E7D07041F9A19733 /* BigEndianHexTests.swift in Sources */,
+				584FAC5AED7C901CA6B5374D /* AccountTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
